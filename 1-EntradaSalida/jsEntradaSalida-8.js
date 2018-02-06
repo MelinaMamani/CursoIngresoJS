@@ -9,8 +9,9 @@ function SacarResto()
     var divisor;
     divisor= parseInt(document.getElementById("numeroDivisor").value);
 
-    cociente = dividendo/divisor;
+    //cociente = dividendo/divisor;
     var resto;
-    resto = (divisor * cociente)-dividendo; 
+    //resto = (divisor * cociente)-dividendo; 
+    resto= dividendo%divisor;
     alert("El resto es "+resto);
 }
