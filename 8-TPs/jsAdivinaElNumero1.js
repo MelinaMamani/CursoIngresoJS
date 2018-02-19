@@ -16,8 +16,9 @@ var contadorIntentos= 0;
 
 function comenzar()
 {
+  contadorIntentos = 0;
 	numeroSecreto= Math.floor((Math.random()*(101-1))+1);
-  	console.log(numeroSecreto);
+  console.log(numeroSecreto);
 }
 
 /*function verificar()
@@ -49,16 +50,18 @@ function verificar()
   	
   	contadorIntentos++;
     
-  	if (numero==numeroSecreto) {
-      
-      if (contadorIntentos==1) {
-      	alert("Sigue participando...");
+  	if (numero==numeroSecreto && contadorIntentos==1) {
+      numeroSecreto++;
+      if(numeroSecreto>100){
+          numeroSecreto-=2;
       }
-      else{
+      alert("Sigue participando...");
+      }
+      else if(numero==numeroSecreto && contadorIntentos>1){
       	alert("Acertaste!");
       }
-  	}
-    else if(numero>numeroSecreto){
+  	
+     else if(numero>numeroSecreto){
       pasa= numero - numeroSecreto;
       alert("Se pasó por "+pasa);
     }
@@ -69,7 +72,7 @@ function verificar()
     document.getElementById("intentos").value = contadorIntentos;
     
   }
-  else if (contadorIntentos>=10) {
-  	alert("Ya no te quedan mas intentos.");
+ else if (contadorIntentos>=10) {
+  	alert("Ya no te quedan mas intentos! Reinicia el juego.");
   }
 }
