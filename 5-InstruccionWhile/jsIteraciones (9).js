@@ -1,6 +1,6 @@
 function Mostrar()
 {
-	var min= 0, numero, max= -1000, primera= true;
+	var min= 0, numero, max= 0, primera= true;
 	var contador=0;
 	// declarar variables
 	
