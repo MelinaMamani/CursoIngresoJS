@@ -4,8 +4,10 @@ function Mostrar()
     var ingreso = prompt("Ingrese un número","");
     ingreso = parseInt(ingreso);
 
-    // for(var i= ingreso; ingreso>0; i--)
-    for (var i = 1; ingreso+1>i; i++) {
+    // Para orden descendente: 
+    for(var i= ingreso; i>0; i--){
+    //Para orden ascendente:
+    //for (var i = 1; ingreso+1>i; i++) {
         
         while (isNaN(ingreso)) {
             ingreso = prompt("Reingrese un número","");
