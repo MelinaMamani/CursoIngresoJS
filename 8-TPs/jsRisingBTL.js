@@ -19,11 +19,11 @@ var minAr=10000000000, legajoArMenor, sueldoN, cantPerNeto=0, cantPerBruto=0, su
  
    for (var num = 7; num >0; num--){
        
-       /*edad = prompt("Ingrese su edad","");
-       edad = parseInt(edad);*/
-   
+       edad = prompt("Ingrese su edad","");
+       edad = parseInt(edad);
+
    do {
-         /*while (edad<18 || edad>90) {
+         while (edad<18 || edad>90) {
             edad = prompt("Reingrese su edad","");
             edad = parseInt(edad);
             }
@@ -82,7 +82,7 @@ var minAr=10000000000, legajoArMenor, sueldoN, cantPerNeto=0, cantPerBruto=0, su
                 eCivil = prompt("Reingresa tu estado civil: ");
                 break;
         }
-*/
+
         sueldo = prompt("Ingrese su sueldo: ","");
         sueldo = parseInt(sueldo);
 
@@ -139,7 +139,7 @@ var minAr=10000000000, legajoArMenor, sueldoN, cantPerNeto=0, cantPerBruto=0, su
         }
 
                 
-        /*legajo = prompt("Ingrese su número de legajo","");
+        legajo = prompt("Ingrese su número de legajo","");
         legajo = parseInt(legajo);
 
         while (legajo<1000 || legajo>9999) {
@@ -199,7 +199,7 @@ var minAr=10000000000, legajoArMenor, sueldoN, cantPerNeto=0, cantPerBruto=0, su
                 alert("Opción no válida.");
                 nac = prompt("Reingresa tu nacionalidad: ");
                 break;
-        }*/
+        }
 
     } while (edad<18 && edad>90);
 
