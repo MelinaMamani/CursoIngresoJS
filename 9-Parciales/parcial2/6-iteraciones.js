@@ -1,7 +1,7 @@
 //Debemos lograr mostrar un mensaje al presionar el botón  'MOSTRAR'.
 function Mostrar()
 {
-	var importe, ventas, minVentas=1000000, maxVentas=1;
+	var importe, ventas, minVentas, maxVentas, primera=true;
 
 	for (var dias = 0; dias <7; dias++) {
 		importe = prompt("Ingrese el importe de hoy: ","");
@@ -11,6 +11,11 @@ function Mostrar()
             importe = prompt("Error. Reingrese el importe","");
             importe = parseInt(importe);
         }
+		if(primera){
+			primera= false;
+			maxVentas=importe;
+			minVentas=importe;
+		}
 		if (importe>maxVentas) {
 			maxVentas=importe;
 		}
