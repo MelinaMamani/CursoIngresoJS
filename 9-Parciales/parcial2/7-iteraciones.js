@@ -23,7 +23,13 @@ function Mostrar()
                     sexo = prompt("Reingrese sexo f ó m","");
                 }
         }
-		if (nota<notaBaja) {
+		/*if (nota<notaBaja) {
+			notaBaja=nota;
+		}*/
+		if (alum==1) {
+			notaBaja=nota;
+		}
+		else if (nota<notaBaja) {
 			notaBaja=nota;
 		}
 		if (sexo.toLowerCase()=="m" && nota>=6) {
