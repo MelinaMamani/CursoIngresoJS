@@ -15,15 +15,15 @@ function ComenzarIngreso ()
 var edad, sexo, sueldo=8000, eCivil, legajo, nac;
 //Variables 2da parte
 var maxNac=1, maxFemAr=1, sumaM=0, sumaF=0, sumaG=0, promM, promF, promG, cantPerM=0, sueldoMaxF=1, edadFem;
-var legajoArMenor=0, cantPerNeto, cantPerBruto, sueldoF=0, sueldoM=0, sueldoG=0;  
+var minAr=10000000000, legajoArMenor, sueldoN, cantPerNeto=0, cantPerBruto=0, sueldoF=0, sueldoM=0, sueldoG=0;  
  
    for (var num = 7; num >0; num--){
        
-       edad = prompt("Ingrese su edad","");
-       edad = parseInt(edad);
+       /*edad = prompt("Ingrese su edad","");
+       edad = parseInt(edad);*/
    
    do {
-         while (edad<18 || edad>90) {
+         /*while (edad<18 || edad>90) {
             edad = prompt("Reingrese su edad","");
             edad = parseInt(edad);
             }
@@ -44,7 +44,7 @@ var legajoArMenor=0, cantPerNeto, cantPerBruto, sueldoF=0, sueldoM=0, sueldoG=0;
         }
         console.log(sexo);
         
-        /*alert(' A continuación elija una opción: \n 1) Soltero \n 2) Casado \n 3) Divorciado \n 4) Viudo') 
+        alert(' A continuación elija una opción: \n 1) Soltero \n 2) Casado \n 3) Divorciado \n 4) Viudo') 
         
         eCivil = prompt("Tu estado civil: ");
 
@@ -95,8 +95,6 @@ var legajoArMenor=0, cantPerNeto, cantPerBruto, sueldoF=0, sueldoM=0, sueldoG=0;
             sueldo = parseInt(sueldo);
             }
 
-        console.log(sueldo);
-
         if (sexo=="f" || sexo=="F") {
                     sumaF = sumaF+sueldo;
                     sueldoF++;
@@ -117,15 +115,30 @@ var legajoArMenor=0, cantPerNeto, cantPerBruto, sueldoF=0, sueldoM=0, sueldoG=0;
                     }
 
             }
-                sueldoG = sueldoM+sueldoF;
-                sumaG = sumaM+sumaF;
+                sueldoG++;
+
+                sumaG = sumaG+sueldo;
                 promF = sumaF/sueldoF;
                 promM = sumaM/sueldoM;
                 promG = sumaG/sueldoG;
+                sueldoN = sueldo-((sueldo*25)/100);
                 promF = Math.floor(promF);
                 promM = Math.floor(promM);
                 promG = Math.floor(promG);
+                sueldoN = Math.floor(sueldoN);
+                console.log(promG);
+                console.log(sueldoN);
+        
+        if (sueldoN>promG) {
+            cantPerNeto++;
+            console.log(cantPerNeto);
+        }
+        if (sueldo>promG) {
+            cantPerBruto++;
+            console.log(cantPerBruto);
+        }
 
+                
         /*legajo = prompt("Ingrese su número de legajo","");
         legajo = parseInt(legajo);
 
@@ -152,6 +165,12 @@ var legajoArMenor=0, cantPerNeto, cantPerBruto, sueldoF=0, sueldoM=0, sueldoG=0;
                 nac = "Argentina";
                 if (sexo=="M" || sexo=="m") {
                     nac="Argentino";
+                }
+                if (sueldo<minAr) {
+                   minAr=sueldo;
+                   legajoArMenor=legajo;
+                   console.log(minAr);
+                   console.log(legajoArMenor);
                 }
                 break;
             
