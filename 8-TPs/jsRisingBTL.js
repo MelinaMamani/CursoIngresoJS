@@ -13,17 +13,17 @@ function ComenzarIngreso ()
 {
 //Variables 1ra parte
 var edad, sexo, sueldo=8000, eCivil, legajo, nac;
-//variables 2da parte
-var maxNac=1, maxFemAr=1, promM=0, promF=0, promG=0, cantPerM=0, edadFem=0;
-var legajoArMenor=0, cantPerNeto, cantPerBruto;  
+//Variables 2da parte
+var maxNac=1, maxFemAr=1, sumaM=0, sumaF=0, sumaG=0, promM, promF, promG, cantPerM=0, sueldoMaxF=1, edadFem;
+var legajoArMenor=0, cantPerNeto, cantPerBruto, sueldoF=0, sueldoM=0, sueldoG=0;  
  
-   for (var num = 2; num >0; num--){
+   for (var num = 7; num >0; num--){
        
-       /*edad = prompt("Ingrese su edad","");
-       edad = parseInt(edad);*/
+       edad = prompt("Ingrese su edad","");
+       edad = parseInt(edad);
    
    do {
-         /*while (edad<18 || edad>90) {
+         while (edad<18 || edad>90) {
             edad = prompt("Reingrese su edad","");
             edad = parseInt(edad);
             }
@@ -32,8 +32,8 @@ var legajoArMenor=0, cantPerNeto, cantPerBruto;
             edad = parseInt(edad);
             }
          console.log(edad);
-         */
-         sexo = prompt("Ingrese f ó m .");
+         
+         sexo = prompt("Ingrese f (Femenino) ó m (Masculino) .");
 
          while (sexo.toLowerCase() !="f" && sexo.toLowerCase() !="m") {
                 sexo = prompt("Reingrese sexo f ó m","");
@@ -41,7 +41,7 @@ var legajoArMenor=0, cantPerNeto, cantPerBruto;
                 while (sexo==null) {
                     sexo = prompt("Reingrese sexo f ó m","");
                 }
-            }
+        }
         console.log(sexo);
         
         /*alert(' A continuación elija una opción: \n 1) Soltero \n 2) Casado \n 3) Divorciado \n 4) Viudo') 
@@ -95,6 +95,37 @@ var legajoArMenor=0, cantPerNeto, cantPerBruto;
             sueldo = parseInt(sueldo);
             }
 
+        console.log(sueldo);
+
+        if (sexo=="f" || sexo=="F") {
+                    sumaF = sumaF+sueldo;
+                    sueldoF++;
+
+                if (sueldo>sueldoMaxF) {
+                   sueldoMaxF=sueldo;
+                   edadFem=edad;
+                   console.log(edadFem);
+                }
+            }
+                
+        else if (sexo=="M" || sexo=="m") {
+                    sumaM = sumaM+sueldo;
+                    sueldoM++;
+
+                    if (sueldo>12000) {
+                        cantPerM++;
+                    }
+
+            }
+                sueldoG = sueldoM+sueldoF;
+                sumaG = sumaM+sumaF;
+                promF = sumaF/sueldoF;
+                promM = sumaM/sueldoM;
+                promG = sumaG/sueldoG;
+                promF = Math.floor(promF);
+                promM = Math.floor(promM);
+                promG = Math.floor(promG);
+
         /*legajo = prompt("Ingrese su número de legajo","");
         legajo = parseInt(legajo);
 
@@ -105,7 +136,7 @@ var legajoArMenor=0, cantPerNeto, cantPerBruto;
         while (isNaN(legajo) || legajo==null) {
             legajo = prompt("Error al ingresar. Intente otra vez","");
             legajo = parseInt(legajo);
-            }*/
+            }
         
         alert(' Elija una opción: \n A) Argentino \n E) Extranjero \n N) Nacionalizado') 
         
@@ -149,7 +180,7 @@ var legajoArMenor=0, cantPerNeto, cantPerBruto;
                 alert("Opción no válida.");
                 nac = prompt("Reingresa tu nacionalidad: ");
                 break;
-        }
+        }*/
 
     } while (edad<18 && edad>90);
 
@@ -163,7 +194,7 @@ var legajoArMenor=0, cantPerNeto, cantPerBruto;
     document.getElementById("Edad").value = edad;
     document.getElementById("Sexo").value = sexo;
     document.getElementById("EstadoCivil").value = eCivil;
-    document.getElementById("Sueldo").value = maxNac;
+    document.getElementById("Sueldo").value = sueldo;
     document.getElementById("Legajo").value = legajo;
     document.getElementById("Nacionalidad").value = nac;
 }
